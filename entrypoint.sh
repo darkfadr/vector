@@ -6,7 +6,7 @@ if [ -z "$VECTOR_CONFIG" ]; then
   exit 1
 fi
 
-CONFIG_FILE="/tmp/vector.yaml"
+CONFIG_FILE="/tmp/vector.toml"
 
 printf '%s' "$VECTOR_CONFIG" > "$CONFIG_FILE"
 chmod 600 "$CONFIG_FILE"
