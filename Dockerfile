@@ -7,5 +7,8 @@ COPY --chmod=755 entrypoint.sh /entrypoint.sh
 # VECTOR_CONFIG should contain the full vector configuration as a string.
 # The entrypoint writes it to /tmp/vector.yaml and starts vector with that file.
 ENV VECTOR_CONFIG=""
+ENV ENVIRONMENT_ID=""
+ENV REDIS_URL=""
+ENV DATADOG_API_KEY=""
 
 ENTRYPOINT ["/bin/sh", "/entrypoint.sh"]
