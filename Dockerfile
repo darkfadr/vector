@@ -8,8 +8,7 @@ FROM timberio/vector:latest-alpine
 COPY --from=busybox /bin/sh /bin/sh
 
 # Copy the entrypoint script and make it executable
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY --chmod=755 entrypoint.sh /entrypoint.sh
 
 # VECTOR_CONFIG should contain the full vector configuration as a string.
 # The entrypoint writes it to /tmp/vector.yaml and starts vector with that file.
