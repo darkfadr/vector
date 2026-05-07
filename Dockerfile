@@ -1,11 +1,5 @@
-# Stage 1: obtain a statically-linked shell from busybox
-FROM busybox:1.36 AS busybox
-
-# Stage 2: extend the official Vector alpine image
+# Extend the official Vector alpine image
 FROM timberio/vector:latest-alpine
-
-# Copy busybox's sh (kept for consistency across base image variants)
-COPY --from=busybox /bin/sh /bin/sh
 
 # Copy the entrypoint script and make it executable
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
